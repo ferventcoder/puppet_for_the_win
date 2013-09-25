@@ -136,6 +136,9 @@
             <Directory Id='sys' Name='sys'>
             </Directory>
             <Directory Id='bin' Name='bin'>
+              <Component Id="PuppetInstallDirBinToPath" Guid="F46FA9A8-43A2-4379-8933-EAAE2D0E5D72">
+                <Environment Id="PuppetBinPath" Name="PATH" Value="[INSTALLDIR]bin" Permanent="No" Part="last" Action="set" System="Yes" />
+              </Component>
             </Directory>
             <Directory Id='service' Name='service'>
               <Component Id='PuppetService' Guid="639ECD7F-6186-43D5-9E1A-FC0278DBEE15">
@@ -490,6 +493,8 @@
       <ComponentRef Id="HieraEtcDir" />
       <ComponentRef Id="PuppetShortcuts" />
       <ComponentRef Id="PuppetDocumentationShortcuts" />
+
+      <ComponentRef Id="PuppetInstallDirBinToPath" />
 
       <ComponentGroupRef Id="sys" />
       <ComponentGroupRef Id="puppet" />
