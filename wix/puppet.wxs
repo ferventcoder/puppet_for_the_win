@@ -359,9 +359,13 @@
                  puppet cannot create the directories it needs since the parent
                  does not exist. -->
             <Directory Id="PuppetVarDir" Name="var">
-              <Component Id="PuppetVarDir" Permanent="yes" Guid="B95A17F3-CF5E-4EC7-859E-F10C0965645F">
-                <CreateFolder />
-              </Component>
+              <Directory Id="PuppetStateDir" Name="state">
+                <Directory Id="PuppetGraphsDir" Name="graphs">
+                  <Component Id="PuppetVarDir" Permanent="yes" Guid="B95A17F3-CF5E-4EC7-859E-F10C0965645F">
+                    <CreateFolder />
+                  </Component>
+                </Directory>
+              </Directory>
             </Directory>
           </Directory>
           <Directory Id="HieraAppData" Name="hiera">
