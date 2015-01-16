@@ -102,7 +102,7 @@
             </Shortcut>
             <RemoveFolder Id="ApplicationProgramsFolder" On="uninstall"/>
             <!-- This registry entry is required to be a keypath for this component -->
-            <RegistryValue Root="HKCU" Key="SOFTWARE\$(var.OurCompanyName)\$(var.OurProductName)"
+            <RegistryValue Root="HKCU" Key="SOFTWARE\$(var.OurCompanyName)\$(var.OurProductNameWord)"
               Name="installed" Value="1" Type="integer" KeyPath="yes" />
           </Component>
           <Directory Id='PuppetShortcutDocumentationDir' Name="Documentation">
