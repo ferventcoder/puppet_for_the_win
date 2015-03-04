@@ -178,6 +178,7 @@ namespace :windows do
 
     # Only copy the .bat files into place
     cp_p(FileList["conf/windows/stage/bin/*.bat"], "stagedir/bin/")
+    FileUtils.cp('downloads/mcollective/ext/windows/mco.bat', 'stagedir/bin/mco.bat') if File.exists?('downloads/mcollective/ext/windows/mco.bat')
   end
 
   task :misc => 'stagedir' do
